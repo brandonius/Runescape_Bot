@@ -15,7 +15,9 @@ import org.bot.game.RSAppletStub;
 import org.bot.net.ConfigReader;
 import org.bot.reflection.Camera;
 import org.bot.reflection.Client;
+import org.bot.reflection.GameObject;
 import org.bot.reflection.Player;
+import org.bot.reflection.Skills;
 
 public class Bot {
 	public static URLClassLoader classLoader;
@@ -80,8 +82,10 @@ public class Bot {
             	
             	while(Client.isLoggedIn()){
             		FirstLoggedIn = true;
-            		System.out.println("Current world: " + Client.getCurrentWorld() + ", PlayerName: ");
+            		System.out.println("Current world: " + Client.getCurrentWorld());
             		System.out.println("CameraX position: " + Camera.getCameraX() + ", CameraY position: " + Camera.getCameraY() + ", CameraZ position: " + Camera.getCameraZ());
+            		System.out.println("Woodcutting level: " + Skills.getWoodCuttingLevel() + ", xp: " + Skills.getWoodCuttingXp());
+            		GameObject.getGameObjectsId();
             		Thread.sleep(1000);
             	}
             	

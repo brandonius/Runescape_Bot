@@ -6,12 +6,12 @@ import org.bot.Bot;
 
 public class Player {
 
-	/*
+	
 	public static Object[] getPlayerName() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		
 		//client_player
-		Field f = Bot.classLoader.loadClass("ax").getDeclaredField("he");
+		Field f = Bot.classLoader.loadClass("client").getDeclaredField("gp");
 		f.setAccessible(true);
 		Object[] players = (Object[]) f.get(null);
 		
@@ -33,5 +33,5 @@ public class Player {
 		return players;
 		
 	}
-	*/
+	
 }

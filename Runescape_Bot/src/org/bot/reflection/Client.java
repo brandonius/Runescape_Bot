@@ -92,7 +92,6 @@ public class Client {
 	
 	public static int setWorld(int world) throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
-		//
 		Field f = Bot.classLoader.loadClass("client").getDeclaredField("h");
 		f.setAccessible(true);
 		f.setInt(Bot.applet, world);
