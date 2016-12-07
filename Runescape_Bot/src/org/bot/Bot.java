@@ -2,6 +2,7 @@ package org.bot;
 
 import java.applet.Applet;
 import java.awt.BorderLayout;
+import java.awt.event.MouseListener;
 import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,6 +17,7 @@ import org.bot.net.ConfigReader;
 import org.bot.reflection.Camera;
 import org.bot.reflection.Client;
 import org.bot.reflection.GameObject;
+import org.bot.reflection.Mouse;
 import org.bot.reflection.Player;
 import org.bot.reflection.Skills;
 
@@ -66,18 +68,33 @@ public class Bot {
             frame.pack();
             frame.setVisible(true);
             
+
+            
+            MouseListener[] mouse_listeners = applet.getMouseListeners();
+            
+            MouseListener[] hacked_mouse_listener = mouse_listeners;
+            for(MouseListener listener : mouse_listeners)
+            {
+            	applet.removeMouseListener(listener);
+            }
+            
             String un = "";
             String pw = "";
             boolean FirstLoggedIn = false;
+            int[] mousePos = {0,0};
+            int[] playerPos = {0,0};
             
             while(true)
             {
-            	Client.setWorld(301);
+            	//Client.setWORLD();
             	while(!Client.isLoggedIn() && FirstLoggedIn == false){
             	System.out.println("Username: " + Client.getUsername() + ", Password: " + Client.getPassword());
             	Thread.sleep(1000);
             	un = Client.getUsername();
             	pw = Client.getPassword();
+            	mousePos = Mouse.getMousePos();
+            	System.out.println("mouse X: " + mousePos[0] + ", mouse Y: " + mousePos[1]);
+            	
             	}
             	
             	while(Client.isLoggedIn()){
@@ -85,7 +102,12 @@ public class Bot {
             		System.out.println("Current world: " + Client.getCurrentWorld());
             		System.out.println("CameraX position: " + Camera.getCameraX() + ", CameraY position: " + Camera.getCameraY() + ", CameraZ position: " + Camera.getCameraZ());
             		System.out.println("Woodcutting level: " + Skills.getWoodCuttingLevel() + ", xp: " + Skills.getWoodCuttingXp());
-            		GameObject.getGameObjectsId();
+            		//GameObject.getGameObjects();
+            		
+            		playerPos = Player.getPlayerPos();
+            		System.out.println("player pos X: " + playerPos[0] + ", player pos Y: " + playerPos[1]);
+            		Player.getCombatLevel();
+            		
             		Thread.sleep(1000);
             	}
             	
