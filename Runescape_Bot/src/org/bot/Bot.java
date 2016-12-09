@@ -86,7 +86,6 @@ public class Bot {
             
             while(true)
             {
-            	//Client.setWORLD();
             	while(!Client.isLoggedIn() && FirstLoggedIn == false){
             	System.out.println("Username: " + Client.getUsername() + ", Password: " + Client.getPassword());
             	Thread.sleep(1000);
@@ -94,8 +93,12 @@ public class Bot {
             	pw = Client.getPassword();
             	mousePos = Mouse.getMousePos();
             	System.out.println("mouse X: " + mousePos[0] + ", mouse Y: " + mousePos[1]);
-            	
+            	if(Client.getGameState() == 10)
+            	{
+            		Client.setWorld();
             	}
+            	
+            }
             	
             	while(Client.isLoggedIn()){
             		FirstLoggedIn = true;

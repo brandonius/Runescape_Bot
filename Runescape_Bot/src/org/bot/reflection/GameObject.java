@@ -8,7 +8,7 @@ public class GameObject {
 
 	public static Object[] getGameObjects() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
-		Field f = Bot.classLoader.loadClass("cw").getDeclaredField("l");
+		Field f = Bot.classLoader.loadClass("cp").getDeclaredField("y");
 		f.setAccessible(true);
 		
 		Object[] GObjects = (Object[]) f.get(null);
@@ -18,7 +18,7 @@ public class GameObject {
 	
 	public static int getGameObjectsId() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
-		Field f = Bot.classLoader.loadClass("cm").getDeclaredField("y");
+		Field f = Bot.classLoader.loadClass("cw").getDeclaredField("j");
 		f.setAccessible(true);
 		
 		for(Object o : getGameObjects())

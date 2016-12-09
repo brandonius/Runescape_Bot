@@ -9,7 +9,7 @@ public class Player {
 	public static Object[] getPlayerObject() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//Gets all the player in an Object array list.
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("gp");
+		Field f = Bot.classLoader.loadClass("client").getDeclaredField("gv");
 		f.setAccessible(true);
 		Object[] players = (Object[]) f.get(null);
 		
@@ -37,13 +37,11 @@ public class Player {
 	{
 		
 		//client_players
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("gp");
-		f.setAccessible(true);
-		Object[] players = (Object[]) f.get(null);
+		Object[] players = getPlayerObject();
 		
 		//player_name
-		 Class<?> c = Bot.classLoader.loadClass("v");
-		Field name = c.getDeclaredField("n");
+		 Class<?> c = Bot.classLoader.loadClass("r");
+		Field name = c.getDeclaredField("o");
 		name.setAccessible(true);
 		
 		for(Object o : players)
@@ -62,12 +60,12 @@ public class Player {
 	
 	public static int[] getPlayerPos() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
-		Field f = Bot.classLoader.loadClass("s").getDeclaredField("de");
+		Field f = Bot.classLoader.loadClass("ag").getDeclaredField("ag");
 		f.setAccessible(true);
-		int x = f.getInt(Bot.applet) * 2105556273;
-		f = Bot.classLoader.loadClass("client").getDeclaredField("df");
+		int x = f.getInt(Bot.applet) * 990979225;
+		f = Bot.classLoader.loadClass("ag").getDeclaredField("au");
 		f.setAccessible(true);
-		int y = f.getInt(Bot.applet) * 81328761;
+		int y = f.getInt(Bot.applet) * 1096974759;
 		int[] pos = {x,y};
 		
 		return pos;

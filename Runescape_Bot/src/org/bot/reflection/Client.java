@@ -11,10 +11,10 @@ public class Client {
 	public static int getGameState() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_game_state
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("a");
+		Field f = Bot.classLoader.loadClass("client").getDeclaredField("d");
 		f.setAccessible(true);
 		//client_game_state_multiplier
-		int value = (int) f.getInt(null) * -638628455;
+		int value = (int) f.getInt(null) * -730851945;
 
 		return value;
 	}
@@ -22,7 +22,7 @@ public class Client {
 	public static String getUsername() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, ClassNotFoundException
 	{
 		//client_username
-		Field f = Bot.classLoader.loadClass("ad").getDeclaredField("ab");
+		Field f = Bot.classLoader.loadClass("ar").getDeclaredField("af");
 		f.setAccessible(true);
 		String username = (String) f.get(null);
 		
@@ -32,7 +32,7 @@ public class Client {
 	public static String getPassword() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, ClassNotFoundException
 	{
 		//client_password
-		Field f = Bot.classLoader.loadClass("ad").getDeclaredField("ax");
+		Field f = Bot.classLoader.loadClass("ar").getDeclaredField("ac");
 		f.setAccessible(true);
 		String password = (String) f.get(null);
 		
@@ -42,7 +42,7 @@ public class Client {
 	public static String setUsername(String un) throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_username
-		Field f = Bot.classLoader.loadClass("ad").getDeclaredField("ab");
+		Field f = Bot.classLoader.loadClass("ar").getDeclaredField("af");
 		f.setAccessible(true);
 		f.set(Bot.applet, un);
 		
@@ -52,7 +52,7 @@ public class Client {
 	public static String setPassword(String pw) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, ClassNotFoundException
 	{
 		//client_password
-		Field f = Bot.classLoader.loadClass("ad").getDeclaredField("ax");
+		Field f = Bot.classLoader.loadClass("ar").getDeclaredField("ac");
 		f.setAccessible(true);
 		f.set(Bot.applet, pw);
 		
@@ -66,7 +66,8 @@ public class Client {
 		if(state == 30)
 		{
 			return true;
-		} else 
+		} 
+		else 
 		{
 			return false;
 		}
@@ -75,35 +76,26 @@ public class Client {
 	public static int getCurrentWorld() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_world
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("h");
+		Field f = Bot.classLoader.loadClass("client").getDeclaredField("g");
 		f.setAccessible(true);
 		//client_world_multiplier
-		int world = f.getInt(Bot.applet) * -262484747;
+		int world = f.getInt(Bot.applet) * 1544660437;
 		
 		return world;
 	}
 	
-	public static void setWORLD() throws NoSuchFieldException, SecurityException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
+	public static void setWorld() throws NoSuchFieldException, SecurityException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException
 	{
 		//setWorld
-		Method m = Bot.classLoader.loadClass("ah").getMethod("l", void.class);
+		byte b = 1;
+		Class<?> c = Bot.classLoader.loadClass("aa");
+		Method m = Bot.classLoader.loadClass("dq").getDeclaredMethod("f", c, byte.class);
 		m.setAccessible(true);
-		m.invoke(Bot.applet, 301);
-	}
-	
-	public static int setWorld(int world) throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
-	{
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("h");
+		Field f = c.getDeclaredField("h");
 		f.setAccessible(true);
-		f.setInt(Bot.applet, world);
-		
-		return world;
+		Object O = f.get(Bot.applet);
+		m.invoke(Bot.applet, O, b);	
 	}
 	
-	
-	public static void breakInScript()
-	{
-		
-	}
 	
 }

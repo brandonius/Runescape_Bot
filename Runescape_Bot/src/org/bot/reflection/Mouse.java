@@ -23,15 +23,15 @@ public class Mouse {
 		try
 		{
 			//mouseX
-			Field f = Bot.classLoader.loadClass("dm").getDeclaredField("c");
+			Field f = Bot.classLoader.loadClass("do").getDeclaredField("l");
 			f.setAccessible(true);
 			
-			pos[0] = f.getInt(Bot.applet) * 104323431;
+			pos[0] = f.getInt(Bot.applet) * 1235537309;
 			//mouseY
-			f = Bot.classLoader.loadClass("dm").getDeclaredField("p");
+			f = Bot.classLoader.loadClass("do").getDeclaredField("c");
 			f.setAccessible(true);
 			
-			pos[1] = f.getInt(Bot.applet) * -1078458213;
+			pos[1] = f.getInt(Bot.applet) * 374092531;
 			return pos;
 		}
 		catch (Exception e) {

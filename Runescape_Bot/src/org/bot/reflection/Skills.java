@@ -9,7 +9,7 @@ public class Skills {
 	public static int[] getCurrentSkillLevels() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_current_levels
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("hn");
+		Field f = Bot.classLoader.loadClass("client").getDeclaredField("hv");
 		f.setAccessible(true);
 		
 		//skills according to hiscores order
@@ -27,7 +27,7 @@ public class Skills {
 	public static int[] getRealSkillLevels() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_real_levels
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("hc");
+		Field f = Bot.classLoader.loadClass("client").getDeclaredField("hj");
 		f.setAccessible(true);
 
 		//skills according to hiscores order
@@ -39,7 +39,7 @@ public class Skills {
 	public static int[] getSkillsExperiences() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_experiences
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("hg");
+		Field f = Bot.classLoader.loadClass("client").getDeclaredField("hd");
 		f.setAccessible(true);
 
 		//skills according to hiscores order

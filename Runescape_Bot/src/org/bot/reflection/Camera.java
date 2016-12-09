@@ -9,10 +9,10 @@ public class Camera {
 	public static int getCameraX() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_cameraX
-		Field f = Bot.classLoader.loadClass("w").getDeclaredField("fu");
+		Field f = Bot.classLoader.loadClass("dj").getDeclaredField("fy");
 		f.setAccessible(true);
 		//client_cameraX_multiplier
-		int x = ((int) f.get(Bot.applet) * 1123691143);
+		int x = ((int) f.get(Bot.applet) * -655807297);
 		
 		return x;
 	}
@@ -20,10 +20,10 @@ public class Camera {
 	public static int getCameraY() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_cameraY
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("fc");
+		Field f = Bot.classLoader.loadClass("s").getDeclaredField("fo");
 		f.setAccessible(true);
 		//client_cameraY_multiplier
-		int y = ((int) f.get(Bot.applet) * -2136100077);
+		int y = ((int) f.get(Bot.applet) * -1500081839);
 		
 		return y;
 	}
@@ -31,15 +31,17 @@ public class Camera {
 	public static int getCameraZ() throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
 	{
 		//client_cameraZ
-		Field f = Bot.classLoader.loadClass("client").getDeclaredField("fr");
+		Field f = Bot.classLoader.loadClass("gw").getDeclaredField("fb");
 		f.setAccessible(true);
 		//client_cameraZ_multiplier
-		int z = ((int) f.get(Bot.applet) * 1080637571);
+		int z = ((int) f.get(Bot.applet) * 739598751);
 		
 		return z;
 	}
 	
-	public static int setCameraX(int X) throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
+	/*
+	 * public static int setCameraX(int X) throws NoSuchFieldException, SecurityException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException
+	 *
 	{
 		//client_cameraX
 		Field f = Bot.classLoader.loadClass("w").getDeclaredField("fu");
@@ -49,4 +51,5 @@ public class Camera {
 		
 		return X;
 	}
+	*/
 }
